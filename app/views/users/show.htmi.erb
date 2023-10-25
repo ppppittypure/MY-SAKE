@@ -1,0 +1,9 @@
+<div class="contents row">
+  <p><%= @name %>さんの投稿一覧</p>
+  <% @sakes.each do |sake| %>
+    <div class="content_post" style="background-image: url(<%= sake.image %>);">
+      <p><%= sake.text %></p>
+      <span class="name"><%= sake.name %></span>
+    </div>
+  <% end %>
+</div>

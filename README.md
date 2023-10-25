@@ -13,22 +13,16 @@ MY SAKE
 | encrypted_password | string | null: false |
 | name               | string | null: false |
 | profile             | text   | null: false |
+| preference_id      | string  | null: false |
+| taste_id           | string   | null: false |
+| flavor_id           | string   | null: false |
 
-- has_many :messages
+- has_many :comments
 - has_one  :ranking
 
 
 
-## messages テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| title   | string | null: false |
-| image |  | null: false |
-| user_id  | references | null: false, foreign_key: true |
-
-- belongs_to :user
-- has_many   :comments
 
 ## ranking テーブル
 
@@ -37,18 +31,38 @@ MY SAKE
 | name | string | null: false |
 | title | string | null: false |
 | text | text | null: false |
+| evaluation | float | null: false |
 | user_id  | references | null: false, foreign_key: true |
 
 - belongs_to :user
 - has_many :comments
+- has_many :likes
 
-##comments テーブル
+
+##comments  テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| text | string | null: false |
+| comment | string | null: false |
 | ranking_id  | references | null: false, foreign_key: true |
-| message_id | references | null: false, foreign_key: true |
+| user_id  | references | null: false, foreign_key: true |
+
 
 - belongs_to :ranking
-- belongs_to :message
+- belongs_to :user
+- has_many :likes
+
+##likes テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user_id | references | null: false,foreign_key: true |
+| comment_id  | references | null: false, foreign_key: true |
+
+- belongs_to :user
+- belongs_to :ranking
+
+
+
+
+

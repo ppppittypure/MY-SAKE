@@ -1,0 +1,18 @@
+<div class="upper-message">
+    <div class="sake-user">
+      <!-- 投稿したユーザー名情報を出力する -->
+      <%= sake.user.name %>
+    </div>
+    <div class="sake-date">
+      <!-- 投稿した時刻を出力する -->
+      <%= l message.created_at %>
+    </div>
+  </div>
+  <div class="lower-message">
+    <div class="sake-content">
+      <!-- 投稿したメッセージ内容を記述する -->
+      <%= sake.content %>
+    </div>
+    <%= image_tag sake.image, class: "sake-image" %>
+  </div>
+</div>
