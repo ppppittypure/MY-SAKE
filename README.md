@@ -19,6 +19,7 @@ MY SAKE
 
 - has_many :comments
 - has_one  :ranking
+- has_many :likes
 
 
 
@@ -28,7 +29,7 @@ MY SAKE
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| name | string | null: false |
+
 | title | string | null: false |
 | text | text | null: false |
 | evaluation | float | null: false |
@@ -50,14 +51,13 @@ MY SAKE
 
 - belongs_to :ranking
 - belongs_to :user
-- has_many :likes
 
 ##likes テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user_id | references | null: false,foreign_key: true |
-| comment_id  | references | null: false, foreign_key: true |
+| ranking_id  | references | null: false, foreign_key: true |
 
 - belongs_to :user
 - belongs_to :ranking

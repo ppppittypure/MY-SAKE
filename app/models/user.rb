@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-    has_one :sake
+    has_one  :ranking
     has_many :likes
     has_many :comments
 
