@@ -1,5 +1,4 @@
-class RankingController < ApplicationController
-
+class RankingsController < ApplicationController
     
   before_action :set_ranking, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show]
@@ -18,6 +17,9 @@ class RankingController < ApplicationController
   end
 
   def show
+    @name = current_user.name
+    @rankings = current_user.rankings
+
   end
 
   def destroy

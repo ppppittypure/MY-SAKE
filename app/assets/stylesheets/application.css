@@ -2,3 +2,20 @@
  * {
      box-sizing: border-box;
  }
+
+ .fadeIn {
+     animation-name: fadeInAnime;
+     animation-duration: 3s;
+     animation-fill-mode: forwards;
+     opacity: 0;
+ }
+
+ @keyframes fadeInAnime {
+     0% {
+         opacity: 0;
+     }
+
+     100% {
+         opacity: 1;
+     }
+ }
