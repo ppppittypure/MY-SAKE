@@ -1,4 +1,9 @@
 
+/*
+ *=require_tree .
+ *=require_self 
+ */
+
  * {
      box-sizing: border-box;
  }
@@ -19,3 +24,5 @@
          opacity: 1;
      }
  }
+
+/
