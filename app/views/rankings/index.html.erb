@@ -29,39 +29,52 @@
    <header class="header">
       <div class="header__bar row">
         <h1 class="grid-6"><p class="fadeIn">MY SAKE</p></h1>
+        <% if user_signed_in? %>
         <div id="navArea">
 
           <nav>
             <div class="inner">
-              
             
-    
-            <div class="openbtn8"><div class="openbtn-area"><span></span><span></span><span></span></div></div>
+              <ul>
+                <li><%= current_user.name %></li>
+                <li><%= link_to "マイページ", "/users/#{current_user.id}" %></li>
+                <li><%= link_to "投稿する", new_ranking_path, class: "post" %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %></li>
+                
+              </ul>
+            </div>
+    </nav>
+          <div class="openbtn8"><div class="openbtn-area"><span></span><span></span><span></span></div></div>
+           <% else %>
+            <div class="inner">
+            <ul>
+            <li><%= link_to "ログイン", new_user_session_path, class: "post" %></li>
+            <li><%= link_to "新規登録", new_user_registration_path, class: "post" %></li>
+            </ul>
+            </div>
+        <% end %>
             <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
             <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-2-8/js/5-2-8.js"></script>
               
-          
-            <% if user_signed_in? %>
-            
-              <ul>
-                  <li><span><%= current_user.name %></span></li>
-                  <ul class="user__info">
-                  <li><%= link_to "マイページ", "/users/#{current_user.id}" %></li>
-                  <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %></li>
-                  <li><%= link_to "投稿する", new_ranking_path, class: "post" %></li>
-              </ul>
-          
-            <% else %>
-            
-              <ul>
-              <li><%= link_to "ログイン", new_user_session_path, class: "post" %></li>
-              <li><%= link_to "新規登録", new_user_registration_path, class: "post" %></li>
-              </ul>
-            
-            <% end %>
-            </div>
-          </nav>
-        </div>
+      
+          <% if user_signed_in? %>
+          <div class="user_nav grid-6">
+            <span><%= current_user.name %>
+                <ul class="user__info">
+                <%= link_to "マイページ", "/users/#{current_user.id}" %>
+                <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
+                <%= link_to "投稿する", new_ranking_path, class: "post" %>
+                </ul>
+             </span>
+          </div>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+          </div>
+        <% end %>
+        
+      </div>
 
 
     </header>
@@ -119,6 +132,26 @@
         });
     </script>   
 
+    <script>
+          function toggleNav() {
+        const body = document.body;
+        const openbtn8 = document.getElementById("js_openbtn8");
+        const mask = document.getElementById("js_mask");
+
+        
+        openbtn8.addEventListener("click", function () {
+          body.classList.toggle("open_nav"); 
+        });
+
+        
+        overlay.addEventListener("click", function () {
+          body.classList.remove("open_nav"); // 
+        });
+      }
+
+      toggleNav();
+    </script>
+
   </body>
 
 
@@ -133,11 +166,11 @@
   
 
   <ul class="gallery">
-    <li><a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/01.jpg" data-lightbox="gallery1" data-title="投稿者/タイトル"><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/01.jpg" alt=""></a></li>
+    <li><a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/01.jpg" data-lightbox="gallery1" data-title="投稿者/タイトル"><img src="https://sakemirai.sakenowa.com/pictures/GOx7ey3FiJ1LX?d=750x1000" alt=""></a></li>
     <li><a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/02.jpg" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/02.jpg" alt=""></a></li>
     <li><a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/03.jpg" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/03.jpg" alt=""></a></li>
     <li><a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/04.jpg" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/04.jpg" alt=""></a></li>
-    <li><a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/05.jpg" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/05.jpg" alt=""></a></li>
+    <li><a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/05.jpg" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="https://sakemirai.sakenowa.com/pictures/1Tima3fPiSF1Xk?d=750x1000" alt=""></a></li>
     <li><a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/06.jpg" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/06.jpg" alt=""></a></li>
     <li><a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/07.jpg" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/07.jpg" alt=""></a></li>
     <li><a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/08.jpg" data-lightbox="gallery1" data-title="グループ1キャプション"><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-1/img/08.jpg" alt=""></a></li>
