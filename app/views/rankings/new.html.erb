@@ -1,24 +1,20 @@
 
 
-<div class="contents row">
-  <div class="container">
+<%= stylesheet_link_tag "ranking", "data-turbo-track": "reload" %>
+
+  <form id="form" class="topBefore">
     <h3>投稿する</h3>
     <%= form_with(model: @rankings, local: true) do |form| %>
       <%= form.text_field :name, placeholder: "name" %>
       <%= form.text_field :image, placeholder: "Image Url" %>
-      <span class="star-rating" data-rate="5"></span>
       <%= form.text_area :text, placeholder: "text", rows: "5" %>
 
-      <%= form.submit "UP!" %>
+      <%= form.submit "GO!" %>
+      
     <% end %>
-  </div>
-</div>
-
-<form id="form" class="topBefore">
     
-      <input id="name" type="text" placeholder="NAME">
-      <input id="email" type="text" placeholder="E-MAIL">
-      <textarea id="message" type="text" placeholder="MESSAGE"></textarea>
-  <input id="submit" type="submit" value="GO!">
+  </form>
+
+
+
   
-</form>

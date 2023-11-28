@@ -149,6 +149,17 @@
   <body>
 
   <div class="wrapper">
+
+  
+  <% @rankings.each do |ranking| %>
+    < class="content_post" style="background-image: url(<%= ranking.image %>);">
+      <p><%= ranking.text %></p>
+      <span class="name">
+        <%= ranking.name %>
+      </span>
+    
+  <% end %>
+</div>
   
   
 
