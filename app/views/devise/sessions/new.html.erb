@@ -1,17 +1,16 @@
 <%= stylesheet_link_tag "rankingsnew", "data-turbo-track": "reload" %>
 
 <form id="form" class="topBefore">
-  <div class="contents row">
-  <div class="container">
+  
     <h2>Log in</h2>
     <%= form_with model: @user, url: user_session_path, id: "new_user", class: "new_user", local: true do |f| %>
       <div class="field">
-  
+        <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, placeholder: "email" %>
       </div>
 
       <div class="field">
-        
+        <%=f.label :password %><br />
         <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
       </div>
 
@@ -20,12 +19,11 @@
           <%= f.label :remember_me %><br />
           <%= f.check_box :remember_me %>
         </div>
-      <% end -%>
+      <% end %>
 
       <div class="actions">
         <%= f.submit "ログイン" %>
       </div>
     <% end %>
-  </div>
-</div>
+  
 </form>
