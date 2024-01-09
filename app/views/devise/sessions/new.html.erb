@@ -1,16 +1,16 @@
 <%= stylesheet_link_tag "sessions", "data-turbo-track": "reload" %>
 
-<form id="form" class="topBefore">
+
   
     <h2>Log in</h2>
     <%= form_with model: @user, url: user_session_path, id: "new_user", class: "new_user", local: true do |f| %>
       <div class="field">
-        <%= f.label :email %><br />
+        
         <%= f.email_field :email, autofocus: true, placeholder: "email" %>
       </div>
 
       <div class="field">
-        <%=f.label :password %><br />
+        
         <%= f.password_field :password, autocomplete: "off", placeholder: "password" %>
       </div>
 
@@ -21,4 +21,3 @@
       </div>
     <% end %>
   
-</form>
