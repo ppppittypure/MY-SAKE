@@ -95,6 +95,7 @@ textarea:hover::focus:-ms-placeholder {
 
 body {
     font-family: 'Lato', sans-serif;
+    text-align: center;
     background: #e2dedb;
     color: #b3aca7;
 }
@@ -103,12 +104,13 @@ header {
     position: relative;
     margin: 100px 0 25px 0;
     font-size: 2.3em;
-    text-align: center;
+    
     letter-spacing: 7px;
 }
 
 #form {
     position: relative;
+    text-align: center;
     width: 500px;
     margin: 50px auto 100px auto;
 }
