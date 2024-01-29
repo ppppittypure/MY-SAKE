@@ -37,8 +37,8 @@
             <div class="inner">
             
               <ul>
-                <li><%= current_user.name %></li>
-                <li><%= link_to "マイページ", "/users/#{current_user.id}" %></li>
+                
+                <li><%= link_to current_user.name, "/users/#{current_user.id}" %></li>
                 <li><%= link_to "投稿する", new_ranking_path, class: "post" %></li>
                 <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %></li>
                 
