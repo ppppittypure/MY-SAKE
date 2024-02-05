@@ -3,12 +3,12 @@
 
 <%= stylesheet_link_tag "registrations", "data-turbo-track": "reload" %>
 <form id="form">
- <h2>Sign up</h2>
+ <h2>新規登録</h2>
     <%= form_with model: @user, url: user_registration_path, id: "new_user", class: "new_user", local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.text_field :name, autofocus: true, maxlength: "6", placeholder: "name(6 characters maximum)" %>
+        <%= f.text_field :name, autofocus: true, maxlength: "6", placeholder: "名前(６文字)" %>
       </div>
 
       <div class="field">
@@ -19,31 +19,31 @@
       <div class="field">
         
         
-        <%= f.password_field :password, autocomplete: "off", placeholder: "Password (6 characters minimum)" %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "パスワード(６文字)" %>
       </div>
 
       <div class="field">
         
-        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password confirmation" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワード(２回目)" %>
       </div><div class="contents row">
   <div class="container">
   
 
       <div class="field">
         
-        <%= f.text_field :profile, placeholder: "profile" %>
+        <%= f.text_field :profile, placeholder: "自己紹介" %>
       </div>
       <br>
       <%= f.select :taste_id, [["さわやか", "さわやか"], ["クセあり", "クセあり"], ["こっくり", "こっくり"], ["飲みやすい", "飲みやすい"]], include_blank: "taste?" %>
       
-      <br>
+      <br><br>
       <%= f.select :preference_id, [["パリピ", "パリピ"], ["しっとり", "しっとり"], ["ガッツリ", "ガッツリ"], ["♾️", "♾️"]], include_blank: "mood?" %>
       
-      <br>
+      <br><br>
       <%= f.select :flavor_id, [["フルーティ", "フルーティ"], ["芳醇", "芳醇"], ["パンチ", "パンチ"], ["特になし", "特になし"]], include_blank: "flavor?" %>
       
       <div class="actions">
-        <%= f.submit "新規登録" %>
+        <%= f.submit "GO!" %>
       </div>
     <% end %>
   </div>
