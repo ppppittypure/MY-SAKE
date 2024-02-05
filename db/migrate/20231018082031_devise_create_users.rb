@@ -8,9 +8,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :encrypted_password, null: false, default: ""
       t.string :name,             null: false
       t.text   :profile,            null: false  
-      t.string   :preference_id    null: false  
-      t.string   :taste_id         null: false    
-      t.string   :flavor_id         null: false   
+      t.string   :preference_id,    null: false  
+      t.string   :taste_id,         null: false    
+      t.string   :flavor_id,         null: false   
 
       ## Recoverable
       t.string   :reset_password_token
