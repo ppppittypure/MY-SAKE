@@ -1,8 +1,8 @@
-アプリケーション名    ｜   MY SAKE　
+アプリケーション名    ｜   MY SAKE
 
 アプリケーション概要   ｜  好みに合う日本酒を提案/発見する
 
-URL  ｜
+URL  ｜    https://my-sake.onrender.com
 
 テスト用アカウント   ｜    ttt@ttt  ｜   harutake552
 
@@ -10,7 +10,7 @@ URL  ｜
 
 アプリケーションを作成した背景    ｜    日本酒大好きで海外需要に乗じて再発見してもらうきっかけに
 
-洗い出した要件  |　　https://docs.google.com/spreadsheets/d/1GbInh08ieKfuW5-A9UNhXS-J1wW8Gu7GF-zX4BIIfJ0/edit#gid=0
+洗い出した要件  |    https://docs.google.com/spreadsheets/d/1GbInh08ieKfuW5-A9UNhXS-J1wW8Gu7GF-zX4BIIfJ0/edit#gid=0
 
 
 
@@ -43,7 +43,7 @@ URL  ｜
 改善点    |        細かい評価機能とAI機能の搭載
 
 
-制作時間      |         二ヶ月
+制作時間      |         400時間
 
 # テーブル設計
 
