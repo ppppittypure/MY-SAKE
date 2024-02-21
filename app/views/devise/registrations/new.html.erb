@@ -25,7 +25,7 @@
       <div class="field">
         
         <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "パスワード(２回目)" %>
-      </div><div class="contents row">
+      </div><form class="contents row">
   <div class="container">
   
 
@@ -43,7 +43,7 @@
       <%= f.select :flavor_id, [["フルーティ", "フルーティ"], ["芳醇", "芳醇"], ["パンチ", "パンチ"], ["特になし", "特になし"]], include_blank: "flavor?" %>
       
       <div class="actions">
-        <%= f.submit "GO!" %>
+        <%= f.submit "登録する" %>
       </div>
     <% end %>
   </div>
