@@ -12,7 +12,8 @@ class RankingsController < ApplicationController
   end
 
   def create
-    Ranking.create(ranking_params)
+    
+    Ranking.create!(ranking_params)
     redirect_to "/"
   end
 
