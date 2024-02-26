@@ -77,6 +77,7 @@ gem "image_processing", "~> 1.2"
 gem "active_hash"
 gem "devise-i18n"
 gem "rails-i18n"
+gem "bcrypt", "~> 3.1.7"
 
 group :production do
   gem 'pg'
