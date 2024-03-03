@@ -12,7 +12,7 @@ module MYSake
     config.load_defaults 7.0
     config.i18n.available_locales = [:ja, :en, :fr]
     config.time_zone = "Tokyo"
-    config.active_storage.variant_processor = :mini_magick
+    config.active_storage.variant_processor = :vips
 
     # Configuration for the application, engines, and railties goes here.
     #
