@@ -2,6 +2,7 @@
   <p><%= @name %>さんの投稿一覧</p>
   <% @rankings.each do |ranking| %>
     <div class="content_post" style="background-image: url(<%= ranking.image %>);">
+    <%= image_tag @user.image.variant(resize_to_limit: [100, 100]) %>
       <p><%= rankng.text %></p>
       <span class="name"><%= ranking.name %></span>
     </div>
